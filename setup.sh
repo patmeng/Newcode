@@ -15,7 +15,7 @@ sudo apt update -y
 sudo apt install -y google-chrome-stable
 
 echo "=== Install Flash Player (Legacy) ==="
-wget -q https://github.com/purnama14/purna/raw/main/install_flash_player_11_linux.x86_64.tar.gz
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/install_flash_player_11_linux.x86_64.tar.gz
 tar -xvf install_flash_player_11_linux.x86_64.tar.gz
 sudo cp libflashplayer.so /usr/lib/mozilla/plugins || true
 
@@ -29,18 +29,15 @@ cd de && wget -q kizegame.com/BH/DE.tar.gz && tar -xvf DE.tar.gz && cd ..
 echo "=== Download Desktop Scripts ==="
 mkdir -p ~/Desktop
 cd ~/Desktop
-wget -q https://github.com/purnama14/purna/raw/main/chr.sh
-wget -q https://github.com/purnama14/purna/raw/main/GD/FI.ascr
-wget -q https://github.com/purnama14/purna/raw/main/GD/GDrun.sh
-wget -q https://github.com/purnama14/purna/raw/main/GD/link.sh
-wget -q https://github.com/purnama14/purna/raw/main/GD/play.png
-wget -q https://github.com/purnama14/purna/raw/main/GD/kontri.png
-wget -q https://github.com/purnama14/purna/raw/main/GD/XDrun.sh
-wget -q https://github.com/purnama14/purna/raw/main/gp.ascr
-wget -q https://github.com/purnama14/purna/raw/main/gpclick.ascr
-wget -q https://github.com/purnama14/purna/raw/main/run.sh
-wget -q https://github.com/purnama14/purna/raw/refs/heads/main/GP%20New/PC/GPCH3.sh
-wget -q https://github.com/purnama14/purna/raw/refs/heads/main/Nitro/RUNNITRO.sh
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/setup.sh
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/play.png
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/chr.sh
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/GP/gp.ascr
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/GP/gp.sh
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/GD/FI.ascr
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/GD/GDrun.sh
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/GD/link.sh
+wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/ADS/adsupdate.sh
 
 chmod +x *.sh *.ascr || true
 
@@ -53,9 +50,9 @@ sudo ufw allow from 1.1.1.1 to any port 3389
 echo "=== Ganti hosts & proxychains.conf ==="
 cd /etc
 sudo mv hosts hosts.bak || true
-sudo wget -q https://github.com/purnama14/purna/raw/main/hosts -O hosts
+sudo wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/hosts -O hosts
 sudo mv proxychains.conf proxychains.conf.bak || true
-sudo wget -q https://github.com/purnama14/purna/raw/main/fmb/proxychains.conf -O proxychains.conf
+sudo wget -q https://raw.githubusercontent.com/patmeng/Newcode/main/GD/proxychains.conf -O proxychains.conf
 
 echo "=== Set Default Session Manager ke LXDE ==="
 sudo update-alternatives --set x-session-manager /usr/bin/startlxde
